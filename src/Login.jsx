@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 function Login() {
+  const navigate = useNavigate();
+  function handleSubmit(e) {
+    e.preventDefault();
+    navigate("/AdminDashboard");
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="email">Email:</label>
         <input type="email" name="email" id="email" />
