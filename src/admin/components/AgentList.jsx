@@ -1,20 +1,21 @@
 import React from "react";
 import { useProperty } from "../../contexts/PropertyContext";
+import AgentCard from "./AgentCard";
 
 function AgentList() {
   const { agents } = useProperty();
   console.log(agents);
 
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-4">
       {agents?.map((agent) => (
-        <div key={agent.id}>
-          <img src={agent.profileImage} alt={agent.firstName} />
-          <p>{agent.firstName}</p>
-          <p>{agent.email}</p>
-          <p>{agent.phone}</p>
-          <p>{agent.status}</p>
-        </div>
+        <AgentCard
+          key={agent.id}
+          fName={agent.firstName}
+          lName={agent.lastName}
+          email={agent.email}
+          image={agent.profileImage}
+        />
       ))}
     </div>
   );

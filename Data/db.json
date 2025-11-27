@@ -9,7 +9,7 @@
       "status": "active",
       "password": "password",
       "propertyAssigned": [],
-      "profileImage": "profileImage1"
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg"
     },
     {
       "id": 3,
@@ -20,7 +20,7 @@
       "status": "active",
       "password": "password",
       "propertyAssigned": [],
-      "profileImage": "profileImage1"
+      "profileImage": "https://randomuser.me/api/portraits/men/44.jpg"
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
       "status": "active",
       "password": "password",
       "propertyAssigned": [],
-      "profileImage": "profileImage1"
+      "profileImage": "https://randomuser.me/api/portraits/men/15.jpg"
     }
   ],
 
@@ -65,7 +65,7 @@
     }
   ],
 
-    "tenants": [
+  "tenants": [
     {
       "id": 1,
       "firstName": "lilly",
@@ -100,5 +100,4 @@
       "profileImage": "profileImage3"
     }
   ]
-
 }
