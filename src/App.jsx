@@ -5,6 +5,7 @@ import Login from "./Login";
 import AgentList from "./admin/components/AgentList";
 import PropertyList from "./admin/components/PropertyList";
 import Tenants from "./Tenants";
+import Payment from "./admin/components/Payment";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               element={<PropertyList />}
             />
             <Route path="/AdminDashboard/Tenants" element={<Tenants />} />
+            <Route path="/AdminDashboard/Payments" element={<Payment />} />
           </Route>
         </Routes>
       </BrowserRouter>

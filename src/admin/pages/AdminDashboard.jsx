@@ -1,9 +1,7 @@
-import React, { useState } from "react";
 
 import { NavLink, Outlet } from "react-router";
 
 function AdminDashboard() {
-  const [activeSection, setActiveSection] = useState("agents");
   return (
     <div className="grid grid-cols-5 gap-8 p-6">
       <aside className="col-start-1 col-end-2">
@@ -18,7 +16,7 @@ function AdminDashboard() {
             <NavLink to="/AdminDashboard/Properties">Properties</NavLink>
           </li>
           <li>
-            <NavLink>Payments</NavLink>
+            <NavLink to="/AdminDashboard/Payments">Payments</NavLink>
           </li>
           <li>
             <NavLink>Maintenance</NavLink>
