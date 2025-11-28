@@ -1,4 +1,3 @@
-
 import { NavLink, Outlet } from "react-router";
 
 function AdminDashboard() {
@@ -19,7 +18,7 @@ function AdminDashboard() {
             <NavLink to="/AdminDashboard/Payments">Payments</NavLink>
           </li>
           <li>
-            <NavLink>Maintenance</NavLink>
+            <NavLink to="/AdminDashboard/Maintenance">Maintenance</NavLink>
           </li>
         </ul>
       </aside>

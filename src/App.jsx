@@ -6,6 +6,7 @@ import AgentList from "./admin/components/AgentList";
 import PropertyList from "./admin/components/PropertyList";
 import Tenants from "./Tenants";
 import Payment from "./admin/components/Payment";
+import Maintenance from "./admin/components/Maintenance";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             />
             <Route path="/AdminDashboard/Tenants" element={<Tenants />} />
             <Route path="/AdminDashboard/Payments" element={<Payment />} />
+            <Route path="/AdminDashboard/Maintenance" element={<Maintenance />} />
           </Route>
         </Routes>
       </BrowserRouter>
