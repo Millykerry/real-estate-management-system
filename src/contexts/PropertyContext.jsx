@@ -41,10 +41,9 @@ function PropertContext({ children }) {
     setProperties([...properties, newProperty]);
   }
   function addNewTenant(newTenant) {
-    setProperties([...tenants, newTenant]);
+    setTenants([...tenants, newTenant]);
   }
 
-  const availableProperties = properties?.map((property) => property.name);
   return (
     <property.Provider
       value={{
@@ -55,7 +54,7 @@ function PropertContext({ children }) {
         addNewAgent,
         addNewProperty,
         propertyUrl,
-        availableProperties,
+
         tenantUrl,
         addNewTenant,
       }}

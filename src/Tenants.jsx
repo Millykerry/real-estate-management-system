@@ -3,10 +3,7 @@ import { useProperty } from "./contexts/PropertyContext";
 import TenantCard from "./TenantCard";
 
 function Tenants() {
-  const { tenants, tenantUrl, addNewTenant, availableProperties } =
-    useProperty();
-
-  console.log(availableProperties);
+  const { tenants, tenantUrl, addNewTenant, properties } = useProperty();
 
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
@@ -16,54 +13,48 @@ function Tenants() {
   const [property, setProperty] = useState("");
   const [unit, setUnit] = useState("");
 
-  function handleChangeFname(e) {
-    setFname(e.target.value);
-  }
-  function handleChangeLname(e) {
-    setLname(e.target.value);
-  }
-  function handleChangeEmail(e) {
-    setEmail(e.target.value);
-  }
-  function handleChangeTel(e) {
-    setTel(e.target.value);
-  }
-  function handleChangeImage(e) {
-    setImage(e.target.value);
-  }
-  function handleProperty(e) {
-    setProperty(e.target.value);
-  }
-  function handleUnit(e) {
-    setUnit(e.target.value);
-  }
+  const availableProperties = [...new Set(properties?.map((p) => p.name))];
+  console.log(availableProperties);
 
-  let newAgent = {
-    firstName: fName,
-    lastName: lName,
-    email: email,
-    phone: tel,
-    profileImage: image,
-  };
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newAgent),
-  };
   function handleAddAgent(e) {
     e.preventDefault();
-    fetch(tenantUrl, options)
+
+    const newTenant = {
+      firstName: fName,
+      lastName: lName,
+      email,
+      phone: tel,
+      profileImage: image,
+      property,
+      unit,
+    };
+
+    fetch(tenantUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newTenant),
+    })
       .then((res) => res.json())
-      .then((data) => addNewTenant(data))
-      .catch((err) => console.error(err));
+      .then((data) => {
+        addNewTenant(data);
+        console.log(data);
+
+        // Reset the form
+        setFname("");
+        setLname("");
+        setEmail("");
+        setTel("");
+        setImage("");
+        setProperty("");
+        setUnit("");
+      })
+      .catch(console.error);
   }
 
   return (
     <div>
       <h2 className="text-lg font-bold mb-8">Tenants</h2>
+
       <form
         onSubmit={handleAddAgent}
         className="shadow-lg p-4 rounded-md grid grid-cols-1 gap-4"
@@ -73,82 +64,90 @@ function Tenants() {
             <label htmlFor="fName">First Name:</label>
             <input
               type="text"
-              name="fName"
               id="fName"
               value={fName}
-              onChange={handleChangeFname}
+              onChange={(e) => setFname(e.target.value)}
               required
             />
           </div>
+
           <div>
             <label htmlFor="lName">Last Name:</label>
             <input
               type="text"
-              name="lName"
               id="lName"
               value={lName}
-              onChange={handleChangeLname}
+              onChange={(e) => setLname(e.target.value)}
               required
             />
           </div>
         </div>
+
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="email">Email:</label>
             <input
               type="email"
-              name="email"
               id="email"
               value={email}
-              onChange={handleChangeEmail}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
+
           <div>
             <label htmlFor="tel">Tel:</label>
             <input
               type="tel"
-              name="tel"
               id="tel"
               value={tel}
-              onChange={handleChangeTel}
+              onChange={(e) => setTel(e.target.value)}
               required
             />
           </div>
         </div>
+
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="property">Property:</label>
 
-            <select value={property} onChange={handleProperty} required>
-              {availableProperties?.map((availableProperty) => (
-                <option value={availableProperty} key={availableProperty}>
+            <select
+              value={property}
+              onChange={(e) => setProperty(e.target.value)}
+              required
+            >
+              <option value="" disabled>
+                Select Property
+              </option>
+
+              {availableProperties?.map((availableProperty, index) => (
+                <option value={availableProperty} key={index}>
                   {availableProperty}
                 </option>
               ))}
             </select>
           </div>
+
           <div>
-            <label htmlFor="tel">unit:</label>
+            <label htmlFor="unit">Unit:</label>
             <input
               type="text"
-              name="tel"
-              id="tel"
+              id="unit"
               value={unit}
-              onChange={handleUnit}
+              onChange={(e) => setUnit(e.target.value)}
               required
             />
           </div>
         </div>
+
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="image">Image:</label>
             <input
               type="text"
-              name="image"
               id="image"
               value={image}
-              onChange={handleChangeImage}
+              onChange={(e) => setImage(e.target.value)}
               required
             />
           </div>
@@ -161,15 +160,16 @@ function Tenants() {
           Add Tenant
         </button>
       </form>
+
       <div className="grid grid-cols-3 gap-4 mt-8">
         {tenants?.map((tenant) => (
           <TenantCard
-            key={tenant.id}
             fName={tenant.firstName}
             lName={tenant.lastName}
             image={tenant.profileImage}
             property={tenant.property}
             unit={tenant.unit}
+            key={tenant.id}
           />
         ))}
       </div>

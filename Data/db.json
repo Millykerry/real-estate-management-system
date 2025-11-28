@@ -1,7 +1,7 @@
 {
   "agents": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "milly",
       "lastName": "milly",
       "email": "milly@gmail.com",
@@ -12,7 +12,7 @@
       "profileImage": "https://randomuser.me/api/portraits/women/32.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "firstName": "derik",
       "lastName": "derik",
       "email": "derik@gmail.com",
@@ -23,7 +23,7 @@
       "profileImage": "https://randomuser.me/api/portraits/men/44.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "brian",
       "lastName": "brian",
       "email": "brian@gmail.com",
@@ -60,34 +60,60 @@
   ],
   "propertyList": [
     {
-      "id": 1,
+      "id": "1",
       "agentId": 2,
       "name": "Roses",
       "location": "Kenol",
       "image": "https://picsum.photos/seed/property3/600/400",
       "numOfUnits": "5",
       "price": "300",
-      "units": ["r1", "r2", "r3", "r4", "r5"]
+      "units": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ]
     },
     {
-      "id": 2,
+      "id": "2",
       "agentId": 2,
       "name": "Lilies",
       "location": "Thika",
       "image": "https://picsum.photos/seed/property2/600/400",
       "numOfUnits": "10",
       "price": "3000",
-      "units": ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9", "l10"]
+      "units": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "l8",
+        "l9",
+        "l10"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "agentId": 2,
       "name": "Sunflower",
       "location": "Ruiru",
       "image": "https://picsum.photos/seed/property1/600/400",
       "numOfUnits": "8",
       "price": "6000",
-      "units": ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"]
+      "units": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ]
     },
     {
       "id": "e615",
@@ -96,7 +122,12 @@
       "location": "Kileleshwa",
       "price": "10000",
       "image": "https://picsum.photos/seed/property3/600/400",
-      "units": ["l1", "l2", "l3", "l4"]
+      "units": [
+        "l1",
+        "l2",
+        "l3",
+        "l4"
+      ]
     },
     {
       "id": "c2e0",
@@ -105,7 +136,13 @@
       "location": "uptown",
       "price": "15000",
       "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=60%22",
-      "units": ["d1", "d2", "d3", "d4", "d5"]
+      "units": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5"
+      ]
     },
     {
       "id": "83bb",
@@ -114,12 +151,15 @@
       "location": "Kayole",
       "price": "1500",
       "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=60%22",
-      "units": ["o1", "o2"]
+      "units": [
+        "o1",
+        "o2"
+      ]
     }
   ],
   "tenants": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "lilly",
       "lastName": "lilly",
       "email": "lilly@gmail.com",
@@ -131,7 +171,7 @@
       "property": "Orchid Apartments"
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "erik",
       "lastName": "erik",
       "email": "erik@gmail.com",
@@ -143,7 +183,7 @@
       "property": "Daisy Apartments"
     },
     {
-      "id": 3,
+      "id": "3",
       "firstName": "zilly",
       "lastName": "zilly",
       "email": "zilly@gmail.com",
@@ -153,6 +193,274 @@
       "unit": "m2",
       "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
       "property": "Lavender Apartments"
+    },
+    {
+      "id": "a3e8",
+      "firstName": "john",
+      "lastName": "doe",
+      "email": "hhh@gmail.com",
+      "phone": "0711111111",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "id": "1115",
+      "firstName": "kim",
+      "lastName": "jones",
+      "email": "kim@gmail.com",
+      "phone": "0739",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "l12"
+    },
+    {
+      "id": "92d5",
+      "firstName": "cate",
+      "lastName": "jimes",
+      "email": "cate@gmail.com",
+      "phone": "0799",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lavender Apartments",
+      "unit": "l12"
+    },
+    {
+      "id": "5003",
+      "firstName": "james",
+      "lastName": "jimmy",
+      "email": "abc@gmail.com",
+      "phone": "0788",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Sunflower",
+      "unit": "t3"
+    },
+    {
+      "id": "f742",
+      "firstName": "mark",
+      "lastName": "joe",
+      "email": "abc@gmail.com",
+      "phone": "0788",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "l12"
+    },
+    {
+      "id": "bf4c",
+      "firstName": "jj",
+      "lastName": "ff",
+      "email": "abc@gmail.com",
+      "phone": "0739",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "k12"
+    },
+    {
+      "id": "03c0",
+      "firstName": "kim",
+      "lastName": "tt",
+      "email": "kim@gmail.com",
+      "phone": "00000",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Sunflower",
+      "unit": "w12"
+    },
+    {
+      "id": "e358",
+      "firstName": "cate",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "099",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "2ww"
+    },
+    {
+      "id": "061b",
+      "firstName": "cate",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "099",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "2ww"
+    },
+    {
+      "id": "1a60",
+      "firstName": "cate",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "099",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "2ww"
+    },
+    {
+      "id": "56c9",
+      "firstName": "cate",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "099",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "2ww"
+    },
+    {
+      "id": "5328",
+      "firstName": "cate",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "099",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "2ww"
+    },
+    {
+      "id": "4b6c",
+      "firstName": "cate",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "099",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lilies",
+      "unit": "2ww"
+    },
+    {
+      "id": "e305",
+      "firstName": "peter",
+      "lastName": "kamau",
+      "email": "abc@gmail.com",
+      "phone": "0788",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Daisy Apartments",
+      "unit": "d12"
+    },
+    {
+      "id": "b688",
+      "firstName": "peter",
+      "lastName": "kamau",
+      "email": "abc@gmail.com",
+      "phone": "0788",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Daisy Apartments",
+      "unit": "d12"
+    },
+    {
+      "id": "ff19",
+      "firstName": "james",
+      "lastName": "lily",
+      "email": "abc@gmail.com",
+      "phone": "1234",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Sunflower",
+      "unit": "a12"
+    },
+    {
+      "id": "3ac9",
+      "firstName": "james",
+      "lastName": "lily",
+      "email": "abc@gmail.com",
+      "phone": "1234",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Sunflower",
+      "unit": "a12"
+    },
+    {
+      "id": "0f2f",
+      "firstName": "james",
+      "lastName": "lily",
+      "email": "abc@gmail.com",
+      "phone": "1234",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Sunflower",
+      "unit": "a12"
+    },
+    {
+      "id": "884d",
+      "firstName": "james",
+      "lastName": "lily",
+      "email": "abc@gmail.com",
+      "phone": "1234",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Sunflower",
+      "unit": "a12"
+    },
+    {
+      "id": "7b62",
+      "firstName": "kim",
+      "lastName": "john",
+      "email": "hhh@gmail.com",
+      "phone": "9990",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Sunflower",
+      "unit": "7a"
+    },
+    {
+      "id": "bf49",
+      "firstName": "kim",
+      "lastName": "hh",
+      "email": "hhh@gmail.com",
+      "phone": "0000",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lavender Apartments",
+      "unit": "7a"
+    },
+    {
+      "id": "da9c",
+      "firstName": "kim",
+      "lastName": "jon",
+      "email": "hhh@gmail.com",
+      "phone": "444",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lavender Apartments",
+      "unit": "l12"
+    },
+    {
+      "id": "25a6",
+      "firstName": "victor",
+      "lastName": "him",
+      "email": "kim@gmail.com",
+      "phone": "345",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Roses",
+      "unit": "7a"
+    },
+    {
+      "id": "b2e4",
+      "firstName": "mark",
+      "lastName": "hom",
+      "email": "cate@gmail.com",
+      "phone": "123",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Daisy Apartments",
+      "unit": "10a"
+    },
+    {
+      "id": "7936",
+      "firstName": "kim",
+      "lastName": "kim",
+      "email": "abc@gmail.com",
+      "phone": "111",
+      "profileImage": "https://randomuser.me/api/portraits/women/32.jpg",
+      "property": "Lavender Apartments",
+      "unit": "3q"
+    },
+    {
+      "id": "584c",
+      "firstName": "mark",
+      "lastName": "john",
+      "email": "kim@gmail.com",
+      "phone": "976",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Lavender Apartments",
+      "unit": "23"
+    },
+    {
+      "id": "d868",
+      "firstName": "john",
+      "lastName": "susan",
+      "email": "abc@gmail.com",
+      "phone": "678",
+      "profileImage": "https://randomuser.me/api/portraits/men/32.jpg",
+      "property": "Daisy Apartments",
+      "unit": "2q"
     }
   ]
 }
