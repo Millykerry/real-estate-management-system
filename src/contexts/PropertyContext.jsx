@@ -67,6 +67,7 @@ function PropertContext({ children }) {
         maintenanceRequests,
         tenantUrl,
         addNewTenant,
+        maintenanceRequestUrl,
       }}
     >
       {children}

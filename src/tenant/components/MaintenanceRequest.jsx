@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { useProperty } from "../../contexts/PropertyContext";
 
 function MaintenanceRequest() {
-  function handleMaintenanceRequest() {}
+  const { maintenanceRequestUrl, properties } = useProperty();
+  const [name, setName] = useState("");
+  const [property, setProperty] = useState("");
+  const [unit, setUnit] = useState("");
+  const [issue, setIssue] = useState("");
+
+  function handleMaintenanceRequest(e) {
+    e.preventDefault();
+    const newRequest = {
+      name: name,
+      property: property,
+      unit: unit,
+      issue: issue,
+      status: "pending",
+      date: new Date().toLocaleDateString(),
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRequest),
+    };
+
+    fetch(maintenanceRequestUrl);
+  }
+  const availableProperties = [...new Set(properties?.map((p) => p.name))];
   return (
     <div>
       <h2 className="text-lg font-bold mb-8">Agents</h2>
@@ -11,65 +38,61 @@ function MaintenanceRequest() {
       >
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="fName">First Name:</label>
+            <label htmlFor="name">Name:</label>
             <input
               type="text"
-              name="fName"
-              id="fName"
-              value={fName}
-              onChange={handleChangeFname}
+              name="name"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
           <div>
-            <label htmlFor="lName">Last Name:</label>
-            <input
-              type="text"
-              name="lName"
-              id="lName"
-              value={lName}
-              onChange={handleChangeLname}
+            <label htmlFor="property">Property:</label>
+
+            <select
+              value={property}
+              onChange={(e) => setProperty(e.target.value)}
               required
-            />
+            >
+              <option value="" disabled>
+                Select Property
+              </option>
+
+              {availableProperties?.map((availableProperty, index) => (
+                <option value={availableProperty} key={index}>
+                  {availableProperty}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="unit">Unit:</label>
             <input
-              type="email"
-              name="email"
-              id="email"
-              value={email}
-              onChange={handleChangeEmail}
+              type="unit"
+              name="unit"
+              id="unit"
+              value={unit}
+              onChange={(e) => setUnit(e.target.value)}
               required
             />
           </div>
           <div>
-            <label htmlFor="tel">Tel:</label>
+            <label htmlFor="issue">Issue:</label>
             <input
-              type="tel"
-              name="tel"
-              id="tel"
-              value={tel}
-              onChange={handleChangeTel}
+              type="issue"
+              name="issue"
+              id="issue"
+              value={issue}
+              onChange={(e) => setIssue(e.target.value)}
               required
             />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="image">Image:</label>
-            <input
-              type="text"
-              name="image"
-              id="image"
-              value={image}
-              onChange={handleChangeImage}
-              required
-            />
-          </div>
-        </div>
+
         <button
           type="submit"
           className="cursor-pointer rounded-md bg-green-600 px-4 py-2"

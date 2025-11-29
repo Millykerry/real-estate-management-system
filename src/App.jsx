@@ -21,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          {/* admin routes */}
           <Route path="/AdminDashboard" element={<AdminDashboard />}>
             <Route path="/AdminDashboard/Agents" element={<AgentList />} />
             <Route
@@ -33,6 +34,7 @@ function App() {
               element={<Maintenance />}
             />
           </Route>
+          {/* agent routes */}
           <Route path="/AgentDashboard" element={<AgentDashboard />}>
             <Route
               path="/AgentDashboard/Properties"
@@ -45,6 +47,7 @@ function App() {
               element={<Maintenance />}
             />
           </Route>
+          {/* tenant routes */}
           <Route path="/TenantDashboard" element={<TenantDashboard />}>
             <Route path="/TenantDashboard/Payments" element={<Rent />} />
             <Route
