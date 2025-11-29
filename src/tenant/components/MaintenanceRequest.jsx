@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useProperty } from "../../contexts/PropertyContext";
 
 function MaintenanceRequest() {
-  const { maintenanceRequestUrl, properties } = useProperty();
+  const { maintenanceRequestUrl, properties, addMaintenanceRequest } =
+    useProperty();
   const [name, setName] = useState("");
   const [property, setProperty] = useState("");
   const [unit, setUnit] = useState("");
@@ -26,7 +27,10 @@ function MaintenanceRequest() {
       body: JSON.stringify(newRequest),
     };
 
-    fetch(maintenanceRequestUrl);
+    fetch(maintenanceRequestUrl, options)
+      .then((res) => res.json())
+      .then((data) => addMaintenanceRequest(data))
+      .catch((err) => console.error(err));
   }
   const availableProperties = [...new Set(properties?.map((p) => p.name))];
   return (
