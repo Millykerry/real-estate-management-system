@@ -3,7 +3,7 @@ import { useProperty } from "../../contexts/PropertyContext";
 import AgentCard from "./AgentCard";
 
 function AgentList() {
-  const { agents, agentUrl, addNewAgent } = useProperty();
+  const { agents, agentUrl, addNewAgent, handleDelete } = useProperty();
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -151,6 +151,8 @@ function AgentList() {
             lName={agent.lastName}
             email={agent.email}
             image={agent.profileImage}
+            id={agent.id}
+            onDelete={handleDelete}
           />
         ))}
       </div>

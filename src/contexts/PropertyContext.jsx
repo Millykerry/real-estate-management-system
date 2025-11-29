@@ -61,6 +61,9 @@ function PropertContext({ children }) {
   function addMaintenanceRequest(newMaintenanceRequest) {
     setMaintenanceRequests([...maintenanceRequests, newMaintenanceRequest]);
   }
+  function handleDelete(id) {
+    setAgents((agents) => agents?.filter((agent) => agent.id !== id));
+  }
 
   return (
     <property.Provider
@@ -77,6 +80,7 @@ function PropertContext({ children }) {
         addNewTenant,
         maintenanceRequestUrl,
         addMaintenanceRequest,
+        handleDelete,
       }}
     >
       {children}
