@@ -9,6 +9,7 @@ function AgentList() {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
   const [image, setImage] = useState("");
+  const [query, setQuery] = useState("");
 
   function handleChangeFname(e) {
     setFname(e.target.value);
@@ -49,6 +50,12 @@ function AgentList() {
       .then((data) => addNewAgent(data))
       .catch((err) => console.error(err));
   }
+
+  const filteredAgents = agents?.filter(
+    (agent) =>
+      agent.firstName.toLowerCase().includes(query?.toLowerCase()) ||
+      agent.lastName.toLowerCase().includes(query?.toLowerCase())
+  );
 
   return (
     <div>
@@ -125,8 +132,19 @@ function AgentList() {
           Add Agent
         </button>
       </form>
+      <form className="mt-8">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search by name"
+          className="w-full px-4 py-2 outline"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </form>
       <div className="grid grid-cols-3 gap-4 mt-8">
-        {agents?.map((agent) => (
+        {filteredAgents?.map((agent) => (
           <AgentCard
             key={agent.id}
             fName={agent.firstName}
