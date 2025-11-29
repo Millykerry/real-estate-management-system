@@ -9,6 +9,7 @@ function PropertyList() {
   const [price, setPrice] = useState("");
   const [unit, setUnit] = useState("");
   const [image, setImage] = useState("");
+  const [query, setQuery] = useState("");
 
   function handlePropertyName(e) {
     setPropertyName(e.target.value);
@@ -48,6 +49,12 @@ function PropertyList() {
       .then((data) => addNewProperty(data))
       .catch((err) => console.error(err));
   }
+
+  const filteredProperties = properties?.filter(
+    (property) =>
+      property.name.toLowerCase().includes(query?.toLowerCase()) ||
+      property.location.toLowerCase().includes(query?.toLowerCase())
+  );
   return (
     <>
       <h2 className="text-lg font-bold mb-8">Properties</h2>
@@ -123,8 +130,19 @@ function PropertyList() {
           Add Property
         </button>
       </form>
+      <form className="mt-8">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search by property name or location"
+          className="w-full px-4 py-2 outline"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </form>
       <div className="grid grid-cols-3 gap-4 mt-8">
-        {properties?.map((property) => (
+        {filteredProperties?.map((property) => (
           <PropertyCard
             key={property.id}
             name={property.name}
