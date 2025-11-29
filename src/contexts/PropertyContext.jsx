@@ -7,10 +7,13 @@ const tenantUrl = "http://localhost:7000/tenants";
 const maintenanceRequestUrl = "http://localhost:7000/maintenanceRequests";
 
 function PropertContext({ children }) {
+  // usestate to store initial data
   const [agents, setAgents] = useState([]);
   const [properties, setProperties] = useState([]);
   const [tenants, setTenants] = useState([]);
   const [maintenanceRequests, setMaintenanceRequests] = useState([]);
+
+  // useeffects to make fetch requests
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(agentUrl);
@@ -44,6 +47,8 @@ function PropertContext({ children }) {
     fetchData();
   }, []);
 
+  // handler functions to push objects into the array
+
   function addNewAgent(newAgent) {
     setAgents([...agents, newAgent]);
   }
@@ -52,6 +57,9 @@ function PropertContext({ children }) {
   }
   function addNewTenant(newTenant) {
     setTenants([...tenants, newTenant]);
+  }
+  function addMaintenanceRequest(newMaintenanceRequest) {
+    setMaintenanceRequests([...maintenanceRequests, newMaintenanceRequest]);
   }
 
   return (
@@ -68,6 +76,7 @@ function PropertContext({ children }) {
         tenantUrl,
         addNewTenant,
         maintenanceRequestUrl,
+        addMaintenanceRequest,
       }}
     >
       {children}

@@ -67,7 +67,13 @@
       "image": "https://picsum.photos/seed/property3/600/400",
       "numOfUnits": "5",
       "price": "300",
-      "units": ["r1", "r2", "r3", "r4", "r5"]
+      "units": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ]
     },
     {
       "id": "2",
@@ -77,7 +83,18 @@
       "image": "https://picsum.photos/seed/property2/600/400",
       "numOfUnits": "10",
       "price": "3000",
-      "units": ["l1", "l2", "l3", "l4", "l5", "l6", "l7", "l8", "l9", "l10"]
+      "units": [
+        "l1",
+        "l2",
+        "l3",
+        "l4",
+        "l5",
+        "l6",
+        "l7",
+        "l8",
+        "l9",
+        "l10"
+      ]
     },
     {
       "id": "3",
@@ -87,7 +104,16 @@
       "image": "https://picsum.photos/seed/property1/600/400",
       "numOfUnits": "8",
       "price": "6000",
-      "units": ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"]
+      "units": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ]
     },
     {
       "id": "e615",
@@ -96,7 +122,12 @@
       "location": "Kileleshwa",
       "price": "10000",
       "image": "https://picsum.photos/seed/property3/600/400",
-      "units": ["l1", "l2", "l3", "l4"]
+      "units": [
+        "l1",
+        "l2",
+        "l3",
+        "l4"
+      ]
     },
     {
       "id": "c2e0",
@@ -105,7 +136,13 @@
       "location": "uptown",
       "price": "15000",
       "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=60%22",
-      "units": ["d1", "d2", "d3", "d4", "d5"]
+      "units": [
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5"
+      ]
     },
     {
       "id": "83bb",
@@ -114,7 +151,10 @@
       "location": "Kayole",
       "price": "1500",
       "image": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=60%22",
-      "units": ["o1", "o2"]
+      "units": [
+        "o1",
+        "o2"
+      ]
     }
   ],
   "tenants": [
@@ -460,6 +500,24 @@
       "issue": "HVAC not working",
       "status": "Completed",
       "date": "2024-01-20"
+    },
+    {
+      "id": "01de",
+      "name": "brian waithaka",
+      "property": "Lilies",
+      "unit": "l12",
+      "issue": "broken window",
+      "status": "pending",
+      "date": "29/11/2025"
+    },
+    {
+      "id": "f244",
+      "name": "miltred ombaye",
+      "property": "Sunflower",
+      "unit": "s12",
+      "issue": "broken tiles",
+      "status": "pending",
+      "date": "30/11/2025"
     }
   ]
 }

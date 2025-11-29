@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { useProperty } from "../../contexts/PropertyContext";
 
+import MaintenanceRequestCard from "./MaintenanceRequestCard";
+
 function MaintenanceRequest() {
-  const { maintenanceRequestUrl, properties, addMaintenanceRequest } =
-    useProperty();
+  const {
+    maintenanceRequestUrl,
+    properties,
+    addMaintenanceRequest,
+    maintenanceRequests,
+  } = useProperty();
   const [name, setName] = useState("");
   const [property, setProperty] = useState("");
   const [unit, setUnit] = useState("");
@@ -35,7 +41,7 @@ function MaintenanceRequest() {
   const availableProperties = [...new Set(properties?.map((p) => p.name))];
   return (
     <div>
-      <h2 className="text-lg font-bold mb-8">Agents</h2>
+      <h2 className="text-lg font-bold mb-8">Maintenance Requests</h2>
       <form
         onSubmit={handleMaintenanceRequest}
         className="shadow-lg p-4 rounded-md grid grid-cols-1 gap-4"
@@ -104,6 +110,19 @@ function MaintenanceRequest() {
           Add Maintenance Request
         </button>
       </form>
+      <div className="grid grid-cols-3 gap-4 mt-8">
+        {maintenanceRequests?.map((request) => (
+          <MaintenanceRequestCard
+            key={request.id}
+            name={request.name}
+            property={request.property}
+            unit={request.unit}
+            date={request.date}
+            issue={request.issue}
+            status={request.status}
+          />
+        ))}
+      </div>
     </div>
   );
 }
