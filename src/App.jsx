@@ -10,6 +10,7 @@ import Maintenance from "./admin/components/Maintenance";
 import Tenants from "./agent/components/Tenants";
 import AgentDashboard from "./agent/pages/AgentDashboard";
 import AssignedProperties from "./agent/components/AssignedProperties";
+import TenantDashboard from "./tenant/pages/TenantDashboard";
 
 function App() {
   return (
@@ -40,6 +41,14 @@ function App() {
               path="/AgentDashboard/Maintenance"
               element={<Maintenance />}
             />
+          </Route>
+          <Route path="/TenantDashboard" element={<TenantDashboard />}>
+            <Route path="/TenantDashboard/Payments" element={<Payment />} />
+            <Route
+              path="/TenantDashboard/Maintenance"
+              element={<Maintenance />}
+            />
+            <Route path="/TenantDashboard/Profile" element={<Tenants />} />
           </Route>
         </Routes>
       </BrowserRouter>
