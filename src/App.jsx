@@ -22,6 +22,10 @@ function App() {
     setUser(loggedUser);
   }
 
+  function handleLogout() {
+    setUser(null);
+  }
+
   return (
     <>
       <BrowserRouter>
@@ -41,7 +45,7 @@ function App() {
           <Route
             path="/AdminDashboard"
             element={
-              user?.role === "admin" ? <AdminDashboard /> : <Navigate to="/" />
+              user?.role === "admin" ? <AdminDashboard onLogout={handleLogout}/> : <Navigate to="/" />
             }
           >
             <Route path="/AdminDashboard/Agents" element={<AgentList />} />
@@ -59,7 +63,7 @@ function App() {
           <Route
             path="/AgentDashboard"
             element={
-              user?.role === "agent" ? <AgentDashboard /> : <Navigate to="/" />
+              user?.role === "agent" ? <AgentDashboard onLogout={handleLogout}/> : <Navigate to="/" />
             }
           >
             <Route
@@ -78,7 +82,7 @@ function App() {
             path="/TenantDashboard"
             element={
               user?.role === "tenant" ? (
-                <TenantDashboard />
+                <TenantDashboard onLogout={handleLogout}/>
               ) : (
                 <Navigate to="/" />
               )
