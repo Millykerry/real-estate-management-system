@@ -187,6 +187,7 @@ function Tenants() {
             property={tenant.property}
             unit={tenant.unit}
             key={tenant.id}
+            id={tenant.id}
           />
         ))}
       </div>

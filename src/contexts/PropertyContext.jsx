@@ -73,6 +73,11 @@ function PropertContext({ children }) {
       )
     );
   }
+  function handleDeleteTenant(id) {
+    fetch(`${tenantUrl}/${id}`, { method: "DELETE" }).then(() =>
+      setTenants((tenants) => tenants?.filter((tenant) => tenant.id !== id))
+    );
+  }
 
   return (
     <property.Provider
@@ -80,6 +85,7 @@ function PropertContext({ children }) {
         agents,
         properties,
         handleDeleteProperty,
+        handleDeleteTenant,
         tenants,
         agentUrl,
         addNewAgent,
