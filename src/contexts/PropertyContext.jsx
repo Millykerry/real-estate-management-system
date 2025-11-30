@@ -99,6 +99,7 @@ function PropertContext({ children }) {
         handleDelete,
         setAgents,
         setProperties,
+        setTenants,
       }}
     >
       {children}

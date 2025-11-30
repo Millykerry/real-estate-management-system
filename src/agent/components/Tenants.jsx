@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useProperty } from "../../contexts/PropertyContext";
 import TenantCard from "./TenantCard";
+import TenantModal from "./TenantModal";
 
 function Tenants() {
   const { tenants, tenantUrl, addNewTenant, properties } = useProperty();
@@ -13,6 +14,15 @@ function Tenants() {
   const [property, setProperty] = useState("");
   const [unit, setUnit] = useState("");
   const [query, setQuery] = useState("");
+  const [editTenant, setEditTenant] = useState(null);
+
+  function handleEdit(currTenant) {
+    setEditTenant(currTenant);
+  }
+
+  function handleCloseModal() {
+    setEditTenant(null);
+  }
 
   const availableProperties = [...new Set(properties?.map((p) => p.name))];
   console.log(availableProperties);
@@ -188,9 +198,13 @@ function Tenants() {
             unit={tenant.unit}
             key={tenant.id}
             id={tenant.id}
+            onEdit={() => handleEdit(tenant)}
           />
         ))}
       </div>
+      {editTenant && (
+        <TenantModal tenant={editTenant} onClose={handleCloseModal} />
+      )}
     </div>
   );
 }

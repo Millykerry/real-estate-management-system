@@ -94,8 +94,8 @@
     },
     {
       "id": "2",
-      "firstName": "erik",
-      "lastName": "erik",
+      "firstName": "susan",
+      "lastName": "wambui",
       "email": "erik@gmail.com",
       "phone": "01111771111",
       "status": "active",
@@ -106,7 +106,7 @@
     },
     {
       "id": "3",
-      "firstName": "zilly",
+      "firstName": "ann",
       "lastName": "zilly",
       "email": "zilly@gmail.com",
       "phone": "01111001111",
