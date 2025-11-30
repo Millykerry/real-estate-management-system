@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router";
 
-function AdminDashboard() {
+function AdminDashboard({ onLogout }) {
   return (
     <div className="grid grid-cols-5 gap-8 p-6">
       <aside className="col-start-1 col-end-2">
@@ -16,6 +16,14 @@ function AdminDashboard() {
           </li>
           <li>
             <NavLink to="/AdminDashboard/Maintenance">Maintenance</NavLink>
+          </li>
+          <li>
+            <button
+              onClick={onLogout}
+              className="cursor-pointer bg-red-600 py-2 px-4 rounded-md"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </aside>

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
 
-function TenantDashboard() {
+function TenantDashboard({ onLogout }) {
   return (
     <div className="grid grid-cols-5 gap-8 p-6">
       <aside className="col-start-1 col-end-2">
@@ -17,6 +17,14 @@ function TenantDashboard() {
           </li>
           <li>
             <NavLink to="/TenantDashboard/Profile">Profile</NavLink>
+          </li>
+          <li>
+            <button
+              onClick={onLogout}
+              className="cursor-pointer bg-red-600 py-2 px-4 rounded-md"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </aside>
