@@ -161,6 +161,7 @@ function PropertyList() {
             price={property.price}
             image={property.image}
             onEdit={() => handleEdit(property)}
+            id={property.id}
           />
         ))}
       </div>

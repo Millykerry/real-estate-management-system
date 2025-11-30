@@ -52,27 +52,6 @@
       "email": "300"
     },
     {
-      "id": "2",
-      "agentId": 2,
-      "name": "Lilies",
-      "location": "Thika",
-      "image": "https://picsum.photos/seed/property2/600/400",
-      "numOfUnits": "10",
-      "price": "3000",
-      "units": [
-        "l1",
-        "l2",
-        "l3",
-        "l4",
-        "l5",
-        "l6",
-        "l7",
-        "l8",
-        "l9",
-        "l10"
-      ]
-    },
-    {
       "id": "3",
       "agentId": 2,
       "name": "Sunflower",

@@ -1,8 +1,9 @@
 import React from "react";
+import { useProperty } from "../../contexts/PropertyContext";
 
-function PropertyCard({ name, location, units, price, image, onEdit }) {
+function PropertyCard({ name, location, units, price, image, onEdit, id }) {
   const formatter = new Intl.NumberFormat("en-us");
-
+  const { handleDeleteProperty } = useProperty();
   return (
     <div className="p-4 rounded-md shadow-md flex gap-4 flex-col">
       <div className="w-full rounded-md">
@@ -23,7 +24,12 @@ function PropertyCard({ name, location, units, price, image, onEdit }) {
             Edit
           </button>
           {/* <button className="rounded-md bg-green-600 px-4 py-2">View</button> */}
-          <button className="rounded-md bg-red-600 px-4 py-2">Delete</button>
+          <button
+            className="rounded-md bg-red-600 px-4 py-2"
+            onClick={() => handleDeleteProperty(id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

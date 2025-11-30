@@ -67,8 +67,10 @@ function PropertContext({ children }) {
     );
   }
   function handleDeleteProperty(id) {
-    fetch(`${agentUrl}/${id}`, { method: "DELETE" }).then(() =>
-      setAgents((agents) => agents?.filter((agent) => agent.id !== id))
+    fetch(`${propertyUrl}/${id}`, { method: "DELETE" }).then(() =>
+      setProperties((properties) =>
+        properties?.filter((property) => property.id !== id)
+      )
     );
   }
 
