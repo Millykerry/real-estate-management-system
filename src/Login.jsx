@@ -10,7 +10,7 @@ function Login({ onLogin }) {
     // navigate("/AdminDashboard");
     // navigate("/AgentDashboard");
     // Sending user credentials to a server for verification
-    fetch(`http://localhost:7000/users?email=${email}&passsword=${password}`)
+    fetch(`http://localhost:7000/users?email=${email}&password=${password}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -4,7 +4,10 @@ import AgentCard from "./AgentCard";
 import EditAgentModal from "./EditAgentModal";
 
 function AgentList() {
+  // context props
   const { agents, agentUrl, addNewAgent, handleDelete } = useProperty();
+
+  // initial state
   const [fName, setFname] = useState("");
   const [lName, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -12,6 +15,8 @@ function AgentList() {
   const [image, setImage] = useState("");
   const [query, setQuery] = useState("");
   const [editAgent, setEditAgent] = useState(null);
+
+  // form state handlers
 
   function handleChangeFname(e) {
     setFname(e.target.value);
@@ -38,29 +43,31 @@ function AgentList() {
     setEditAgent(null);
   }
 
-  let newAgent = {
-    firstName: fName,
-    lastName: lName,
-    email: email,
-    phone: tel,
-    profileImage: image,
-  };
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newAgent),
-  };
   function handleAddAgent(e) {
     e.preventDefault();
+    // new agent data
+    let newAgent = {
+      firstName: fName,
+      lastName: lName,
+      email: email,
+      phone: tel,
+      profileImage: image,
+    };
+    // post method
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newAgent),
+    };
+    // add a new agent
     fetch(agentUrl, options)
       .then((res) => res.json())
       .then((data) => addNewAgent(data))
       .catch((err) => console.error(err));
   }
-
+  // implement filter on our search input
   const filteredAgents = agents?.filter(
     (agent) =>
       agent.firstName.toLowerCase().includes(query?.toLowerCase()) ||
@@ -167,6 +174,7 @@ function AgentList() {
           />
         ))}
       </div>
+      {/* conditional rendering for the modal */}
       {editAgent && (
         <EditAgentModal agent={editAgent} onClose={handleCloseModal} />
       )}
